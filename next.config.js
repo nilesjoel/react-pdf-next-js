@@ -1,7 +1,4 @@
 module.exports = {
-  future: {
-    webpack5: true
-  },
   webpack: (config) => {
     // load worker files as a urls with `file-loader`
     config.module.rules.unshift({
@@ -12,12 +9,12 @@ module.exports = {
           options: {
             name: "[contenthash].[ext]",
             publicPath: "_next/static/worker",
-            outputPath: "static/worker"
-          }
-        }
-      ]
+            outputPath: "static/worker",
+          },
+        },
+      ],
     });
 
     return config;
-  }
+  },
 };
